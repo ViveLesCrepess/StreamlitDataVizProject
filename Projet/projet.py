@@ -8,7 +8,7 @@ import altair as alt
 
 st.set_page_config(page_title="Analyse d'accidents routiers",
                    page_icon="🚗", layout="wide")
-lien = "StreamlitDataVizProject/Projet/"
+lien = "Projet/"
 # Les valeurs à supprimer : pr / pr1 / lartpc / V1 / V2 / voie car ne répondent pas à la question
 df = pd.read_csv(lien+"lieux-2022.csv", delimiter=';')
 
