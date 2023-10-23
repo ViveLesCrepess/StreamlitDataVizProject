@@ -8,9 +8,9 @@ import altair as alt
 
 st.set_page_config(page_title="Analyse d'accidents routiers",
                    page_icon="🚗", layout="wide")
-
+lien = "StreamlitDataVizProject/Projet/"
 # Les valeurs à supprimer : pr / pr1 / lartpc / V1 / V2 / voie car ne répondent pas à la question
-df = pd.read_csv("lieux-2022.csv", delimiter=';')
+df = pd.read_csv(lien+"lieux-2022.csv", delimiter=';')
 
 df["larrout"] = pd.to_numeric(
     df["larrout"].str.replace(',', '.'), errors='coerce')
@@ -30,13 +30,13 @@ df_sans_les_non_renseigner = df[(
 st.title("Projet en data visualisation : Le type de route a-t-il un impact sur le nombre et le type d’accident ?")
 
 # Chargement de l'image streamlit
-image1 = Image.open('important.jpg')
+image1 = Image.open(lien+'important.jpg')
 st.image(image1, caption="Prévention")
 
 st.title("Attention ... la route peut vous conduire à une morte certaine 😱")
 
 
-image2 = Image.open('accident.jpg')
+image2 = Image.open(lien+'accident.jpg')
 st.image(image2, caption="Accident de voiture")
 
 # Menu streamlit
